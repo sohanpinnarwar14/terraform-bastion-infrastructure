@@ -29,3 +29,9 @@ variable "public_subnet_id" {
   description = "Public Subnet ID"
   type        = string
 }
+
+
+variable "allowed_ssh_cidr" {
+  description = "CIDR block allowed to SSH into the Bastion Host"
+  type        = string
+}
