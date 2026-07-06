@@ -18,16 +18,6 @@ variable "key_name" {
   type        = string
 }
 
-variable "vpc_id" {
-  description = "VPC ID"
-  type        = string
-}
-
-variable "public_subnet_id" {
-  description = "Public Subnet ID"
-  type        = string
-}
-
 variable "allowed_ssh_cidr" {
   description = "CIDR allowed for SSH access"
   type        = string
