@@ -1,7 +1,14 @@
+output "instance_id" {
+  description = "ID of the Bastion Host EC2 instance"
+  value       = aws_instance.bastion.id
+}
+
 output "bastion_public_ip" {
-  value = module.ec2.public_ip
+  description = "Public IP address of the Bastion Host"
+  value       = aws_instance.bastion.public_ip
 }
 
 output "bastion_public_dns" {
-  value = module.ec2.public_dns
+  description = "Public DNS name of the Bastion Host"
+  value       = aws_instance.bastion.public_dns
 }

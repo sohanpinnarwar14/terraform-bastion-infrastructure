@@ -1,20 +1,25 @@
-# Fetch the existing VPC using its CIDR block
-data "aws_vpc" "existing" {
-  filter {
-    name   = "cidr"
-    values = ["172.31.0.0/16"]
-  }
-}
+# Fetch the latest Amazon Linux 2023 AMI
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
 
-# Fetch the existing subnet using its VPC and CIDR block
-data "aws_subnet" "public" {
   filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.existing.id]
+    name   = "name"
+    values = ["al2023-ami-2023.*-x86_64"]
   }
 
   filter {
-    name   = "cidr-block"
-    values = ["172.31.16.0/20"]
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
   }
 }
