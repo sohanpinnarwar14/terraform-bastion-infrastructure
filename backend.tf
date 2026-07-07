@@ -1,4 +1,3 @@
-# Store Terraform state remotely in Amazon S3
 terraform {
   backend "s3" {
     bucket       = "sohan-terraform-state-792192391767"
