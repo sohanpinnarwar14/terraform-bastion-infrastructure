@@ -27,7 +27,7 @@ variable "allowed_ssh_cidr" {
 variable "key_pair_name" {
   description = "Name of the EC2 key pair created for the Bastion Host"
   type        = string
-  default     = "bastion-key"
+  default     = "bastion-key-new"
 }
 
 
